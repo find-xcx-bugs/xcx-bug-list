@@ -1,7 +1,6 @@
 # 小程序内多重调用原生promise，无返回，无报错，代码卡住
 
-### 作者:
-[JiangHuan](https://github.com/Dragon-Rider)
+### 作者: [JiangHuan](https://github.com/Dragon-Rider)
 
 ### 问题：
 在部分IOS机型上，小程序内使用原生promise实现异步，在嵌套四层后，Promise的resolve和reject均无返回。
