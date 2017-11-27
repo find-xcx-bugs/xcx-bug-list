@@ -28,7 +28,7 @@
 
 对于微信来说，支付完以后会触发支付完成页，如图所示：
 
-![微信支付完成页](https://github.com/find-xcx-bugs/xcx-bugs-list/blob/master/images/3-wechat-success.jpeg)
+![微信支付完成页](https://github.com/find-xcx-bugs/xcx-bugs-list/blob/master/images/3-wechat-success.jpg)
 
 点击完成后再次回到页面会继续触发onshow事件。
 
