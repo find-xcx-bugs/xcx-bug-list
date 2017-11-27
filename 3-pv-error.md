@@ -55,6 +55,6 @@
 
 ![第三方数据统计代码](https://github.com/find-xcx-bugs/xcx-bugs-list/blob/master/images/3-onload-report.png)
 
-
+问题虽小，记录下来的意义更大。
 
 
