@@ -16,9 +16,11 @@
 来确保数据准确性。
 
 微信自定义数据统计和公司内部第三方数据统计方法：
+
 ![第三方数据统计代码](https://github.com/find-xcx-bugs/xcx-bugs-list/blob/master/images/3-onshow-report.png)
 
 微信主动上报数据查询参见MP后台 微信实时统计:
+
 ![微信实时统计](https://github.com/find-xcx-bugs/xcx-bugs-list/blob/master/images/3-mp-data.png)
 
 
