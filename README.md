@@ -20,6 +20,6 @@
 # buglist集合：
 
 [小程序扫普通二维码调起小程序 码地址传为历史地址](./qrcode-history.md)
-
+[小程序内多重调用原生promise，无返回，无报错，代码卡住](./multiple-promise-block.md)
 
 
