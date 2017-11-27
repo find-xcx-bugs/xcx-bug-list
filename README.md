@@ -19,8 +19,10 @@
 
 # buglist集合：
 
-[小程序扫普通二维码调起小程序 码地址传为历史地址](./1-qrcode-history.md)
+[1.小程序扫普通二维码调起小程序 码地址传为历史地址](./1-qrcode-history.md) —— Author: [陈小二](https://github.com/chenyaoswu)
 
-[小程序内多重调用原生promise，无返回，无报错，代码卡住](./2-multiple-promise-block.md)
+[2.小程序内多重调用原生promise，无返回，无报错，代码卡住](./2-multiple-promise-block.md) —— Author: [JiangHuan](https://github.com/Dragon-Rider)
+
+[3.小程序页面pv统计数过高，导致页面转化率低](./3-pv-error.md) —— Author: [陈小二](https://github.com/chenyaoswu)
 
 
