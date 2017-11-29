@@ -1,8 +1,9 @@
 # 小程序内多重调用原生promise，无返回，无报错，代码卡住
 
-### 作者: [JiangHuan](https://github.com/Dragon-Rider)
+## 作者: [JiangHuan](https://github.com/Dragon-Rider)
 
 ### 问题：
+---
 在部分IOS机型上，小程序内使用原生promise实现异步，在嵌套四层后，Promise的resolve和reject均无返回。
 
 ### 环境：
@@ -18,7 +19,6 @@
 ### 解决方案：
 换成第三方库[pinkie.js](https://github.com/floatdrop/pinkie/blob/master/index.js)，实现promise，用户问题得到解决。
 
-<!--
-## 风险：
-  1. pinkie里的promise是使用setTimeout实现的，比原生的promise要慢。 
--->
+### 风险：
+目前还没有遇到任何兼容性问题上报，但pinkie里手动实现的promise比系统原生promise要慢一点。 如果进行异步操作并全局赋值时，要注意异步返回生效的时机。
+
