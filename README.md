@@ -19,10 +19,12 @@
 
 # buglist集合：
 
-[1.小程序扫普通二维码调起小程序 码地址传为历史地址](./1-qrcode-history.md) —— Author: [陈小二](https://github.com/chenyaoswu)
+[1.小程序扫普通二维码调起小程序 码地址传为历史地址](./docs/1-qrcode-history.md) —— Author: [陈小二](https://github.com/chenyaoswu)
 
-[2.小程序内多重调用原生promise，无返回，无报错，代码卡住](./2-multiple-promise-block.md) —— Author: [蒋欢](https://github.com/Dragon-Rider)
+[2.小程序内多重调用原生promise，无返回，无报错，代码卡住](./docs/2-multiple-promise-block.md) —— Author: [蒋欢](https://github.com/Dragon-Rider)
 
-[3.小程序页面pv统计数过高，导致页面转化率低](./3-pv-error.md) —— Author: [陈小二](https://github.com/chenyaoswu)
+[3.小程序页面pv统计数过高，导致页面转化率低](./docs/3-pv-error.md) —— Author: [陈小二](https://github.com/chenyaoswu)
 
 4.小程序分包加载，待补充
+
+[5.vConsole 将已清除掉的log记录再次打印出来，造成代码没有生效或者微信扫码错误的错觉](./docs/5-vConsole.md) —— Author: [蒋欢](https://github.com/Dragon-Rider)
