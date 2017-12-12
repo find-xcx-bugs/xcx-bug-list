@@ -10,7 +10,7 @@
 
 
 ## 参与共建这个仓库的人都有哪些？
-目前主要由[我](https://github.com/chenyaoswu)在维护，因为刚入坑，暂时没有太多的可贡献案例。欢迎大家有空也能一起贡献。
+目前主要由[陈小二](https://github.com/chenyaoswu)和[蒋欢](https://github.com/Dragon-Rider)在维护，因为刚入坑，暂时没有太多的可贡献案例。欢迎大家有空也能一起贡献。
 
 ## 如何贡献
 提pr即可。
