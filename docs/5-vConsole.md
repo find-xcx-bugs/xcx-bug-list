@@ -53,7 +53,9 @@ d、事实上，当你将 log 记录继续往下滑会发现，新的 log 记录
 IOS 和 安卓 均可稳定复现。
 
 ### 原因：
-vConsole 会将已经 “clear” 的缓存再次打印出来。
+vConsole 会将已经 “clear” 的缓存再次打印出来。    
+
+[微信反馈](https://github.com/Tencent/vConsole/issues/131#issuecomment-350980424)：“这是小程序底层的一个问题，正在修复中，不是vConsole的问题哈。”
 
 ### 解决方案：
 调试的时候需要多往后翻一下，找到各次对应的扫码 log 记录。
