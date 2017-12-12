@@ -25,6 +25,4 @@
 
 [3.小程序页面pv统计数过高，导致页面转化率低](./docs/3-pv-error.md) —— Author: [陈小二](https://github.com/chenyaoswu)
 
-4.小程序分包加载，待补充
-
-[5.vConsole 将已清除掉的log记录再次打印出来，造成代码没有生效或者微信扫码错误的错觉](./docs/5-vConsole.md) —— Author: [蒋欢](https://github.com/Dragon-Rider)
+[4.vConsole 将已清除掉的log记录再次打印出来，造成代码没有生效或者微信扫码错误的错觉](./docs/4-vConsole.md) —— Author: [蒋欢](https://github.com/Dragon-Rider)

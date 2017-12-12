@@ -13,7 +13,7 @@
 微信小程序在开发过程中也可以使用 `vConole` 辅助在手机端进行调试，具体方法是：点击开发版小程序又上角 `...` ，之后选择 `打开调试` ，如下图所示。
 
 <div align="center">
-    <img width="50%" src="https://github.com/find-xcx-bugs/xcx-bug-list/blob/master/images/5-vConsole-1.jpeg"/>
+    <img width="50%" src="https://github.com/find-xcx-bugs/xcx-bug-list/blob/master/images/4-vConsole-1.jpeg"/>
     <p style="color: grey">图1 vConsole使用介绍</p>
 </div>
 
@@ -31,21 +31,21 @@ a、我们调试时，会在 onload 内将该函数参数打出，读取微信�
 b、当我们第一次扫码调试时，针对商户 “巴蜀传香” 打出的log结果如图所示，之后我们**点击 clear 清除了调试工具的 log 记录**并退出。
 
 <div align="center">
-    <img width="50%" src="https://github.com/find-xcx-bugs/xcx-bug-list/blob/master/images/5-vConsole-2.jpeg"/>
+    <img width="50%" src="https://github.com/find-xcx-bugs/xcx-bug-list/blob/master/images/4-vConsole-2.jpeg"/>
     <p style="color: grey">图2 第一次扫描二维码得到的结果</p>
 </div>
 
 c、当我们第二次扫不同的二维码进入小程序时，预期onload的参数会变化。然而发现店铺变了，但扫描的结果没有改变（实际上二维码变了，店铺与log也应该会改变）。
 
 <div align="center">
-    <img width="50%" src="https://github.com/find-xcx-bugs/xcx-bug-list/blob/master/images/5-vConsole-3.jpeg"/>
+    <img width="50%" src="https://github.com/find-xcx-bugs/xcx-bug-list/blob/master/images/4-vConsole-3.jpeg"/>
     <p style="color: grey">图3 第二次扫描二维码得到的上次缓存结果</p>
 </div>
 
 d、事实上，当你将 log 记录继续往下滑会发现，新的 log 记录也已打印出来。**说明即使你之前点击了 clear ，新的 log 也会因为缓存再次打印出来。**
 
 <div align="center">
-    <img width="50%" src="https://github.com/find-xcx-bugs/xcx-bug-list/blob/master/images/5-vConsole-4.jpeg"/>
+    <img width="50%" src="https://github.com/find-xcx-bugs/xcx-bug-list/blob/master/images/4-vConsole-4.jpeg"/>
     <p style="color: grey">图4 第二次扫描二维码得到的实际结果</p>
 </div>
 
