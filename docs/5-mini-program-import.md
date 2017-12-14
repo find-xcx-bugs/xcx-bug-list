@@ -1,4 +1,4 @@
-# 小程序退出后再扫码进入，模块加载（import）未能及时更新
+# 小程序退出后扫码再进入，加载（import）的模块无法再次初始化
 
 ## 作者: [蒋欢](https://github.com/Dragon-Rider)
 
