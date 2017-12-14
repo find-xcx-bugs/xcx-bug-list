@@ -1,69 +1,79 @@
-# 小程序退出后扫码再进入，加载（import）的模块无法再次初始化
+# 小程序退出后扫码再进入，“外部”代码不会再执行
 
 ## 作者: [蒋欢](https://github.com/Dragon-Rider)
 
 ### 问题：
-将小程序的页面上的变量，抽离为一个独立js模块import进页面。重新加载页面时，数据不会进行初始化重置。
+小程序退出后再次扫码进入，只会执行生命周期函数里的代码，“外部”代码不会再执行。
 
 ### 具体描述：
-1、在过去的代码里，我们会将本地变量在页面进入时进行初始化设置。这样每次打开页面时会使用默认值初始化，之后在业务逻辑中再进行对应的改变操作。
+在我们的项目里，我们会将一部分本地变量不写在小程序 pageConfig 的 [data][1] 中，而直接在文件头进行声明。这样是为了减少 data 的大小，加快页面渲染速度。但这也无意中带来了新问题，我们看看下面的例子。
 
-**修改前的index.js文件**：
+**出错的index.js文件**：
+
 ````
-    const localFlag = true; // 本地变量初始化
+    const localFlag = true; // “外部”代码，仅执行一次初始化，第二次扫码不会执行！
 
-    onLoad(this, p) {  
-        console.log("localFlag默认为："， localFlag);
+    const pageConfig = {
+        data: {
+            text: 'init data'
+        },
+        onLoad(this, p) {  
+            console.error("localFlag默认为："， localFlag);
 
-        // Do something you need...
-        localFlag = false;
+            // Do something you need...
+            localFlag = false;
+        }
     }
+
+    Page(pageConfig);
 ````
-正常情况下，每次扫码进入页面，本地变量会重新初始化。所以按照以上写法，每次进入页面，onLoad内localFlag的值均为true。如图一所示：
+
+按照以上代码运行，用户初次扫码时，localFlag的值为true。可是，**当用户退出小程序，再次扫码进入时，localFlag没有再初始化，而为false了**。如下图所示：
 <div align="center">
-    <img width="50%" src="../images/5-import-1.jpeg"/>
-    <p style="color: grey">图1 正常情况下每次扫码进入页面，localFlag会重新初始化，为true</p>
+    <img width="50%" src="../images/5-init-1.jpeg"/>
+    <p style="color: grey">图1 用户二次扫码进入小程序，localFlag为false</p>
 </div>
 
+如何避免上述情况的出现呢？
 
-2、但在某一个业务迭代中，由于本地变量过多，我们考虑将变量统一放在同一个js文件中，再一起import到页面上。
+其实也很简单，就是在文件头部只做本地变量的声明，而不做定义。将定义部分放在生命周期函数（如：onload）内。具体代码如下：
 
-**修改后的index.js文件**：
+**正确的ndex.js文件**：
+
 ````
-    import * as navHelper from '../../modules/navHelper';
+    const localFlag; // 只做变量声明而不定义
 
-    onLoad(this: IndexPage, p) {
-        console.log("localFlag默认为："， navHelper.localFlag);
+    const pageConfig = {
+        data: {
+            text: 'init data'
+        },
+        onLoad(this, p) {  
+            localFlag = true;
+            console.error("localFlag默认为："， localFlag);
 
-        // Do something you need...
-        navHelper.localFlag = false;
+            // Do something you need...
+            localFlag = false;
+        }
     }
-````
-**navHelper.js文件**：
-````
-export let localFlag = true
+
+    Page(pageConfig);
 ````
 
-之后会发现，用户初次扫码时，localFlag的值正常为true。可是，当用户退出小程序，**再次扫码进入时，localFlag没有再初始化，而为false了**。如图二所示：
-<div align="center">
-    <img width="50%" src="../images/5-import-2.jpeg"/>
-    <p style="color: grey">图2 使用import方法，用户二次扫码进入小程序，localFlag为false</p>
-</div>
-
-**说明**：在小程序的运行环境中，通过import方式引入的模块和页面本身的环境是隔离开的。每次扫码进入页面后，页面环境会再次初始化，而页面上import的其他模块不会再初始化了。
-
+如此，每次进入页面 localFlag 都会被置为 true 了。
 
 ### 环境：
 IOS 和 安卓 均可稳定复现。
 
 ### 原因：
-这看起来属于小程序自身的模块设计方式导致的。
+这看起来属于小程序自身的模块设计方式导致的。推测即使退出小程序，之前打开的页面也没有做到真正卸载，而处在内存之中。下次再次进入同一个页面时，会被唤起。
 
 ### 解决方案：
-将分离出去的数据模块重新合到该页面中维护，让页面重新加载时正常初始化本地变量即可。
+只在头部代码进行本地变量声明，**而不定义**。将本地变量的定义放在生命周期函数中去。
 
 ### 风险：
 属于小程序开发的经验积累相关。
 
+
+[1]: https://mp.weixin.qq.com/debug/wxadoc/dev/framework/app-service/page.html
 
 
