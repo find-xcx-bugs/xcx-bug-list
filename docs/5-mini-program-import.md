@@ -44,7 +44,7 @@
 export let localFlag = true
 ````
 
-之后会发现，但用户初次扫码是，localFlag的值为true。可是当用户退出小程序，**再次扫码进入时，localFlag没有再次初始化，而为false了**。如图二所示：
+之后会发现，用户初次扫码时，localFlag的值正常为true。可是，当用户退出小程序，**再次扫码进入时，localFlag没有再初始化，而为false了**。如图二所示：
 <div align="center">
     <img width="50%" src="../images/5-import-2.jpeg"/>
     <p style="color: grey">图2 使用import方法，用户二次扫码进入小程序，localFlag为false</p>
