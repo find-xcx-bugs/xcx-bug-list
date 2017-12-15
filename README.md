@@ -29,4 +29,4 @@
 
 [4.vConsole 将已清除掉的log记录再次打印出来，造成代码没有生效或者微信扫码错误的错觉](./docs/4-vConsole.md) —— Author: [蒋欢](https://github.com/Dragon-Rider)
 
-[5.小程序退出后扫码再进入，“外部”代码不会再执行](./docs/5-mini-program-import.md) —— Author: [蒋欢](https://github.com/Dragon-Rider)
+[5.小程序退出后扫码再进入，“外部”代码不会再次执行](./docs/5-mini-program-import.md) —— Author: [蒋欢](https://github.com/Dragon-Rider)
